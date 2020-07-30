@@ -1,15 +1,27 @@
 @extends('home')
 
 @section('crear')
+    <h1>Crear nuevo usuario</h1>
 
     <form method ="post" action="{{ route('users.store') }}">
     @csrf
-        <input type ="text" name="name">
-        <input type ="text" name="email">
-        <input type ="text" name="password">
-        <input type ="text" name="password_confirmation">
-        <input type ="submit" name="enviar" value="Enviar">
-
+        <div class="form-group">
+            <label for="name">Nombre</label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre">
+        </div>
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" class="form-control"  id="email" name="email" placeholder="Ingrese su email">
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+            <label for="password_confirmation">Confirmar Password</label>
+            <input type="password" class="form-control" id="password_confirmation" name="password_confirmation" placeholder="Password">
+        </div>
+        <button type="submit" class="btn btn-primary">Enviar</button>
     </form>
 
 @endsection

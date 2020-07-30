@@ -34,6 +34,11 @@
                                     <form action="{{route('users.edit', $user->id)}}">
                                         <button type="submit" class="btn btn-warning" >Editar</button>
                                     </form>
+                                    <form method="post" action="/users/{{$user->id}}">
+                                        {{ csrf_field() }}
+                                        {{ method_field('DELETE') }}
+                                        <button type="submit" class="btn btn-danger" >Eliminar</button>
+                                    </form>
                                 </td>
                             </tr>
                         @endforeach
