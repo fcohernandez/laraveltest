@@ -14,14 +14,29 @@
                         </div>
                     @endif
 
+                    <h1>Editar usuario</h1>
+
                     <form method ="post" action="/users/{{$user->id}}">
                     @csrf
 
                         <input type="hidden" name="_method" value="PUT">
 
-                        <input type ="text" name="name" value="{{$user->name}}">
-                        <input type ="text" name="email" value="{{$user->email}}">
-                        <input type ="submit" name="enviar" value="Enviar">
+                        <div class="form-group">
+                            <label for="name">Nombre</label>
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Ingrese su nombre" value="{{$user->name}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control"  id="email" name="email" placeholder="Ingrese su email" value="{{$user->email}}">
+                        </div>
+                        <div class="form-group">
+                            <label for="rol">Rol usuario</label>
+                            <select class="form-control" id="rol" name="rol">
+                                <option value=1>Administrador</option>
+                                <option value=2>Común</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Enviar</button>
 
                     </form>
 
