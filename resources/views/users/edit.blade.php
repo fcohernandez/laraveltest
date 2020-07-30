@@ -14,7 +14,16 @@
                         </div>
                     @endif
 
-                    @yield("crear", View::make("users.create"))
+                    <form method ="post" action="/users/{{$user->id}}">
+                    @csrf
+
+                        <input type="hidden" name="_method" value="PUT">
+
+                        <input type ="text" name="name" value="{{$user->name}}">
+                        <input type ="text" name="email" value="{{$user->email}}">
+                        <input type ="submit" name="enviar" value="Enviar">
+
+                    </form>
 
                 </div>
             </div>
