@@ -49,6 +49,16 @@
                                 </li>
                             @endif
                         @else
+                        <div class="container"> <!-- If Needed Left and Right Padding in 'md' and 'lg' screen means use container class -->
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <a href="/home">Home</a>
+                                </div>
+                                <div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+                                    <a href="/users">Usuarios</a>
+                                </div>
+                            </div>
+                        </div>
                             <li class="nav-item dropdown">
                                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                                     {{ Auth::user()->name }} <span class="caret"></span>
