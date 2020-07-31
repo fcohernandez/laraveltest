@@ -31,6 +31,7 @@
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>
+                                @role(['admin'])
                                     <form action="{{route('users.edit', $user->id)}}">
                                         <button type="submit" class="btn btn-warning" >Editar</button>
                                     </form>
@@ -39,7 +40,12 @@
                                         {{ method_field('DELETE') }}
                                         <button type="submit" class="btn btn-danger" >Eliminar</button>
                                     </form>
+                                    @endrole
+                                    @role(['normal'])
+                                        No hay acciones disponibles
+                                    @endrole
                                 </td>
+                                
                             </tr>
                         @endforeach
                         </tbody>
